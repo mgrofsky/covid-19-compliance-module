@@ -1,0 +1,15 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  image: google/cloud-sdk:alpine
+  environment:
+    name: production
+  script:
+  - echo $SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+  - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+  - gcloud --quiet --project $PROJECT_ID functions deploy covid_check --entry-point transcribe_audio --runtime python37 --trigger-resource $BUCKET_NAME --trigger-event google.storage.object.finalize --set-env-vars bucket_name=$BUCKET_NAME, slack_url=$SLACK_URL
+
+  after_script:
+  - rm /tmp/$CI_PIPELINE_ID.json
