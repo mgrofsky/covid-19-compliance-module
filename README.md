@@ -6,6 +6,7 @@
   - [General info](#general-info)
   - [Technologies](#technologies)
   - [Setup](#setup)
+  - [Resources](#resources)
 
 ## General info
 Designed to be a Google Cloud Function that is triggered off a file upload to a Google Cloud Storage bucket and notify a slack channel if certain Covid-19 keywords are detected within the audio.
@@ -46,3 +47,12 @@ For this option just remember that there are environment variables that will nee
 ```
 gcloud --quiet --project $PROJECT_ID functions deploy covid_check --entry-point transcribe_audio --runtime python37 --trigger-resource $BUCKET_NAME --trigger-event google.storage.object.finalize --set-env-vars bucket_name=$BUCKET_NAME, slack_url=$SLACK_URL
 ```
+
+---
+## Resources
+
+***Google Service Accounts***
+https://cloud.google.com/iam/docs/service-accounts
+
+***Gitlab CI Variables***
+https://docs.gitlab.com/ee/ci/variables/
