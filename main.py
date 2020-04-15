@@ -74,7 +74,7 @@ def transcribe_audio(event, context):
             sendtrans = True
         else:
             # This is a list of keywords you will search through to find Covid-19 related terms.
-            list = ["oxygen","ventilator","irs","social security","government","internal revenue","covid", "world health", "national institute", "virus", "corona","quarantine","stimulus","relief","cdc","disease", "china","pandemic","epidemic","sickness"] 
+            list = ["stimulus","oxygen","ventilator","irs","social security","government","internal revenue","covid", "world health", "national institute", "virus", "corona","quarantine","stimulus","relief","cdc","disease", "china","pandemic","epidemic","sickness"] 
             # Using for loop 
             for i in list: 
                 if i.lower() in transcript.lower():
