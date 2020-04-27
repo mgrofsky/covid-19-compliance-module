@@ -1,3 +1,9 @@
+**Original**: [https://gitlab.com/ytelprojects/covid-19-compliance-module](https://gitlab.com/ytelprojects/covid-19-compliance-module)
+
+**Mirror**: [https://github.com/mgrofsky/covid-19-compliance-module](https://github.com/mgrofsky/covid-19-compliance-module)
+
+---
+
 # Covid-19 Compliance Module
 
 ## Table of contents
